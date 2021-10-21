@@ -29,5 +29,31 @@ const quickSort = (arr) => {
     return `${quickSort(less)} ${pivot} ${quickSort(greater)}`;
 }
 
-console.log(quickSort([62, 154, 6, 20, 18]));
+// Сортировка выбором
+const selectionSort = (array) => {
+    for (let i = 0; i < array.length - 1; i += 1) {
+        let min = i;
+        for (let j = i + 1; j < array.length; j += 1) {
+            if (array[j] < array[min]) {
+                min = j;
+            }
+        }
+        [array[i], array[min]] = [array[min], array[i]];
+    }
+    return array;
+}
+
+// Сортировка пузырьком
+const bubbleSort = (arr) => {
+    for (let i = 0; i < arr.length - 1; i += 1) {
+        for (let j = i + 1; j < arr.length; j += 1) {
+            if (arr[j] < arr[i]) {
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+        }
+    }
+    return arr;
+}
+
+console.log(bubbleSort([62, 154, 6, 20, 18, -1]));
 
