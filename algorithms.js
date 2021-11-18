@@ -55,5 +55,12 @@ const bubbleSort = (arr) => {
     return arr;
 }
 
-console.log(bubbleSort([62, 154, 6, 20, 18, -1]));
+// Генерация рандомного числа в заданном интервале
+function randomInteger(min, max) {
+    let rand = min + Math.random() * (max + 1 - min);
+    return Math.floor(rand);
+  }
+
+
+console.log(Math.floor((Math.random() * 44) + 6));
 
